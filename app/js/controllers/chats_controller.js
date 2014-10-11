@@ -1,16 +1,16 @@
 Crack.ChatsController = Ember.ArrayController.extend({
+  needs: 'application',
   actions: {
-    createPost: function(){
+    createMsg: function(){
 
-     var post = this.store.createRecord('chat', {
-       username: this.get('newUsername'),
-       message: this.get('newMessage'),
-       timestamp: new Date(),
-     });
-     this.set('newUsername', '');
-     this.set('newMessage', '');
-
-     post.save();
+    var msg = this.store.createRecord('chat', {
+        username: this.get('controllers.application.user.name'),
+        message: this.get('newMessage'),
+        timestamp: new Date(),
+    });
+     // this.set('newUsername', '');
+    msg.save();
+    this.set('newMessage', '');
     }
   },
 });

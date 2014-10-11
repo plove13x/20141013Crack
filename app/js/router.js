@@ -1,5 +1,9 @@
 Crack.Router.map(function() {
-	this.resource('chats', { path: '/'});
+	this.route('login', { path: '/'});
+	this.resource('chats');
+	// // NO);	, function() {
+	// // 	this.route("room", {path : ':room_id'});
+ //    });
 });
 
 
