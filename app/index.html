@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ember.js • TodoMVC</title>
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body>
+
+
+<script type="text/x-handlebars" data-template-name="application">
+
+<h1 class="mainTitle">CRACK ROCKS! [OR NOTHING?]</h1>
+
+{{outlet}}
+
+</script>
+
+
+<script type="text/x-handlebars" data-template-name="login">
+{{input type="text" class="username" placeholder="UserName"}}
+{{input type="text" class="email" placeholder="E-mail"}}
+<button {{action "logIn"}}>Log In</button>
+</script>
+
+
+
+<script type="text/x-handlebars" data-template-name="chats">
+<ul class="all-posts">
+        {{#each}}
+          <li>{{username}}: {{message}} {{timestamp}}</li>
+        {{/each}}
+</ul>
+
+  <button {{action "createPost"}} class="post-button">+</button>
+  {{input type="text" class="message-input" value=newMessage placeholder="(ENTER MESSAGE HERE)" size="80"}}
+  {{input type="text" class="username-input" value=newUsername placeholder="username"}}
+</script>
+
+
+<!--     <div class="container">
+      <div class="user-info">
+        <img src="https://avatars2.githubusercontent.com/u/7051177?v=2&s=460">
+        <h4 class="username">Ollie Gill</h4>
+        <h6 class="email">olliegill87@googlemail.com</h6>
+      </div>
+
+    {{input class="username-input" placeholder="username"
+    value=newUsername}}
+
+
+    {{input class="message-input" placeholder="message"
+    value=newMessage }}
+
+    <button {{action "createPost"}} class="post-button">POST</button> -->
+
+
+
+        <!-- build:js scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/handlebars/handlebars.js"></script>
+        <script src="bower_components/ember/ember.js"></script>
+        <script src="bower_components/ember-data/ember-data.js"></script>
+        <script src="bower_components/firebase/firebase.js"></script>
+        <script src="bower_components/emberfire/dist/emberfire.js"></script>
+        <script src="bower_components/moment/moment.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+
+
+
+        <!-- build:js scripts/main.js -->
+        <script src="js/application.js"></script>
+        <script src="js/router.js"></script>
+        <script src="js/models/chat.js"></script>
+        <script src="js/controllers/chats_controller.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
