@@ -55,12 +55,25 @@ h1 {
     text-align: center;
 }
 
+img {
+    vertical-align: top;
+}
+
+
 .loginSection {
     margin-top: 5em;
     text-align: center;
 }
 
-img {
+aside {
+    display: inline-block;
+    width: 25%;
+    vertical-align: top;
+}
+
+.chatLog {
+    display: inline-block;
+    width: 50%;
     vertical-align: top;
 }
 

@@ -10,7 +10,7 @@
 
 <!--REMOVE H1?-->
 <script type="text/x-handlebars" data-template-name="application">
-<h1 class="mainTitle">CRACK ROCKS!</h1>     
+<h1 class="mainTitle">CRACK Rocks!</h1>     
 {{outlet}}
 </script>
 
@@ -26,11 +26,64 @@
 </script>
 
 
-<script type="text/x-handlebars" data-template-name="chat">
+<!--   {{#each}}
+
+    <li>
+    {{#link-to 'room.chats' this}}
+    {{roomName}}
+    {{/link-to}}
+    </li>
+
+  {{/each}} -->
+<script type="text/x-handlebars" data-template-name="rooms">
+<aside>
+  <h1>Crack</h1>
+  <h4>Rock Out...</h4>
+  <h2>Rooms</h2>
+  <ul>
+
+    <li>
+    {{#link-to 'rooms.chat'}}
+    General Snus Room
+    {{/link-to}}
+    </li>
+    <li>
+    Shit Talkin
+    </li>
+
+  </ul>
+  User Info?
+</aside>
+
+{{outlet}}
+</script>
+
+
+<!-- Add something in place of image tag path like:
+If (this.email) {
+var hash = md5(this.email);
+'<img src=\'http://www.gravatar.com/avatar/' + hash + '?d=http://placekitten.com/g/40/50\' />'    
+} else { "http://placekitten.com/g/40/50" } 
+-->
+<!-- 1st two and last lines shouldn't be in this template -->
+<script type="text/x-handlebars" data-template-name="rooms/chat">
+
+
+<div class="chatLog">
+  <h1>Room Name</h1>
+
+
+
+
 <ul class="allMsgs">
     {{#each}}
         <li>
-            <img src="http://placekitten.com/g/40/50" />
+        
+{{#if this.email}}  
+{{this.email}}
+{{/if}}
+
+            <img src='http://www.gravatar.com/avatar/f6bfe421126c91d30029e954e8f1ee26?s=60&d=http://placekitten.com/g/40/50' />
             <div class="nonAvatar">
             <h5>{{username}}:</h5>
             <span>{{timestamp}}</span>
@@ -42,6 +95,11 @@
 
 <button {{action "createMsg"}} class="postMsgButton">+</button>
 {{input type="text" class="messageInput" value=newMessage placeholder="(ENTER MESSAGE HERE)" size="80"}}
+
+
+</div>
+
+
 </script>
 
 
@@ -68,6 +126,7 @@
         <script src="js/controllers/application_controller.js"></script>
         <script src="js/controllers/login_controller.js"></script>
         <script src="js/controllers/chat_controller.js"></script>
+        <script src="js/md5.min.js"></script>
         <!-- endbuild -->
 </body>
 </html>

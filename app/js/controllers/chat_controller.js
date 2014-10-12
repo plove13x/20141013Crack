@@ -1,4 +1,4 @@
-Crack.ChatController = Ember.ArrayController.extend({
+Crack.RoomsChatController = Ember.ArrayController.extend({
   needs: 'application',
   actions: {
     createMsg: function(){
@@ -7,6 +7,7 @@ Crack.ChatController = Ember.ArrayController.extend({
         username: this.get('controllers.application.user.name'),
         message: this.get('newMessage'),
         timestamp: new Date(),
+        email: this.get('controllers.application.user.email')
     });
      // this.set('newUsername', '');
     msg.save();
