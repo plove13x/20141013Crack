@@ -1,6 +1,6 @@
 Crack.Router.map(function() {
 	this.route('login', { path: '/'});
-	this.resource('chats');
+	this.resource('chat');
 	// // NO);	, function() {
 	// // 	this.route("room", {path : ':room_id'});
  //    });
@@ -9,6 +9,6 @@ Crack.Router.map(function() {
 
 Crack.ApplicationRoute = Ember.Route.extend({
   model: function() {
-    return this.store.find('chat');
+    return this.store.find('message');
   }
 });

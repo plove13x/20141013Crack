@@ -8,7 +8,7 @@ Crack.LoginController = Ember.Controller.extend({
 					name: this.get('username'),
 					email: this.get('email')
 				})
-				this.transitionToRoute('chats');
+				this.transitionToRoute('chat');
 			//}
 		}
 	},
