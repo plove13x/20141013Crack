@@ -13,5 +13,6 @@ Crack.RoomsChatController = Ember.ArrayController.extend({
     msg.save();
     this.set('newMessage', '');
     }
-  },
+  }
+
 });

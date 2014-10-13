@@ -3,6 +3,10 @@ Crack.Router.map(function() {
 	this.resource('rooms', function() {
 		this.route('chat');
 	});
+
+	// this.route('message');
+
+
 	// // NO);	, function() {
 	// // 	this.route("room", {path : ':room_id'});
  //    });
@@ -26,3 +30,9 @@ Crack.RoomsChatRoute = Ember.Route.extend({
     	return this.store.find('message');
   	}
 });
+
+// Crack.MessageRoute = Ember.Route.extend({
+//   setupController: function(controller, message) {
+//     controller.set('model', message);
+//   }
+// });
