@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Crack Rocks!</title>
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body>
+
+
+<!--REMOVE H1?-->
+<script type="text/x-handlebars" data-template-name="application">
+<h1 class="mainTitle">CRACK Rocks!</h1>     
+{{outlet}}
+</script>
+
+
+<!--ESCAPE AN APOSTROPHE AFTER SLANGIN?-->
+<script type="text/x-handlebars" data-template-name="login">
+<div class="loginSection">
+<h5>Log in to start slangin:</h5>
+{{input type="text" class="" value=username placeholder="userName"}}
+{{input type="text" class="" value=email placeholder="E-mail"}}
+<button {{action "logIn"}}>Log In</button>
+</div>
+</script>
+
+
+<!--   {{#each}}
+
+    <li>
+    {{#link-to 'room.chats' this}}
+    {{roomName}}
+    {{/link-to}}
+    </li>
+
+  {{/each}} -->
+<script type="text/x-handlebars" data-template-name="rooms">
+<aside>
+  <h1>Crack</h1>
+  <h4>Rock Out...</h4>
+  <h2>Rooms</h2>
+  <ul>
+
+    <li>
+    {{#link-to 'rooms.chat'}}
+    General Snus Room
+    {{/link-to}}
+    </li>
+    <li>
+    Shit Talkin
+    </li>
+    <li>
+    Create New Room 
+    </li>
+
+  </ul>
+  User Info?
+</aside>
+
+{{outlet}}
+</script>
+
+
+<!-- Add something in place of image tag path like:
+If (this.email) {
+var hash = md5(this.email);
+'<img src=\'http://www.gravatar.com/avatar/' + hash + '?d=http://placekitten.com/g/40/50\' />'    
+} else { "http://placekitten.com/g/40/50" } 
+-->
+
+
+<!-- 
+src='http://www.gravatar.com/avatar/f6bfe421126c91d30029e954e8f1ee26?s=60&d=http://placekitten.com/g/40/50'
+-->
+<!-- {{this.hash}}
+{{hash this.email}} (commented out handlebars helper in application.js) -->
+
+
+
+<!-- {{#if this.email}}
+{{this.hash}}
+{{else}}
+{{/if}} -->
+
+
+
+<!-- 1st two and last lines shouldn't be in this template -->
+<script type="text/x-handlebars" data-template-name="rooms/chat">
+
+<div class="chatLog">
+    <h1>Room Name</h1>
+
+        <ul class="allMsgs">
+            {{#each itemController="message"}}
+                {{this.hash}}
+                    <li>
+                        <img {{bind-attr src=avatarUrl}} />
+                        <div class="nonAvatar">
+                            <h5>{{username}}:</h5>
+                            <span>{{timestamp}}</span>
+                            <p>{{message}}</p>
+                        </div>
+                    </li>
+            {{/each}}
+        </ul>
+
+    <button {{action "createMsg"}} class="postMsgButton">+</button>
+    {{input type="text" class="messageInput" value=newMessage placeholder="(ENTER MESSAGE HERE)" size="80"}}
+
+</div>
+
+</script>
+
+
+        <script src="scripts/vendor.js"></script>
+
+
+
+        <script src="scripts/main.js"></script>
+</body>
+</html>
