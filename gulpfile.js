@@ -7,6 +7,8 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var exec = require('child_process').exec;
 var prompt = require('gulp-prompt');
+var mainBowerFiles = require('main-bower-files');
+
 
 gulp.task('styles', function () {
     return gulp.src('app/styles/main.scss')

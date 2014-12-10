@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "dependencies": {
     "gulp-gh-pages": "^0.4.0",
-    "gulp-prompt": "^0.1.1"
+    "gulp-prompt": "^0.1.1",
+    "main-bower-files": "^2.4.1"
   },
   "devDependencies": {
     "connect": "^2.14.4",
